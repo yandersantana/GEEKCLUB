@@ -12,6 +12,7 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PeopleComponent } from './components/people/people.component';
 import { TypeUserComponent } from './components/type-user/type-user.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TypeUserComponent } from './components/type-user/type-user.component';
     TopNavBarComponent,
     MenuComponent,
     PeopleComponent,
-    TypeUserComponent
+    TypeUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

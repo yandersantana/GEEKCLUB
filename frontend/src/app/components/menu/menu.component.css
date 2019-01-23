@@ -1,0 +1,16 @@
+nav a{
+    margin-left: 15px;
+}
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+#nav-mobile{
+    margin-right: 250px;
+}
+
+#imglogo{
+    float: left;
+    width: 2em;
+    padding-bottom: 15px;
+}

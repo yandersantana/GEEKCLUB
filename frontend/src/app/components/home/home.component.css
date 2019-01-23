@@ -1,0 +1,47 @@
+#titulo h2{
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    font-size: 20px;
+}   
+#titulo{
+    color: #fff;
+    position: absolute;
+    z-index: 15;
+    margin: auto;
+    top: 25%;
+    left: 10%;
+    text-align: left;
+}
+#fondobg{
+    width: 100%;
+    z-index: 5;
+    height: 85%;
+}
+h5, h3{
+    color: #333;
+    font-size: 25px;
+}
+h3{
+    margin-top:55px;
+    margin-bottom:35px;
+    font-weight: bold; 
+}
+h3, p{
+    color: #333;
+    text-align: center;
+}
+p{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.astro{
+    background-color: #0b2e42;
+}
+.super{
+    float: right;
+}
+.super p{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
