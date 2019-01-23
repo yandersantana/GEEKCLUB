@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #typeUserForm="ngForm" (ngSubmit)="addTypeUser(typeUserForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="typeUserService.selectedTypeUser._id">
+              <div class="input-field col s12">
+                <input type="text" name="name" #mes="ngModel" [(ngModel)]="typeUserService.selectedTypeUser.name" placeholder="Enter you name">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="description" #importe="ngModel" [(ngModel)]="typeUserService.selectedTypeUser.description" placeholder="Enter you description">
+              </div>
+              <div class="card-action">
+                <div class="input-field col s12">
+                  <button class="btn right" style="margin-left: 2px">Save</button>
+                  <button class="btn right" (click)="resetForm(typeUserForm)">Clean</button>
+                </div>
+              </div> 
+       
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="col s7">
+      <table class="striped highlight black-text">
+        <thead>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let typeUser of typeUserService.typeUser">
+            <td>{{ typeUser.name }}</td>
+            <td>{{ typeUser.description }}</td>
+            <td>
+              <a (click)="editTypeUser(typeUser)">
+                  <i class="material-icons" style="color:blue">edit</i>
+              </a>
+              <a (click)="deleteTypeUser(typeUser._id)">
+                  <i class="material-icons" style="color:blue">delete</i>
+              </a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

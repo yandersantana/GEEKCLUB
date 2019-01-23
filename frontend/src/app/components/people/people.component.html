@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #peopleForm="ngForm" (ngSubmit)="addPeople(peopleForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="peopleService.selectedPeople._id">   
+              <div class="input-field col s12">
+                <input type="text" name="name" #mes="ngModel" [(ngModel)]="peopleService.selectedPeople.name" placeholder="Enter you name">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="lastname" #importe="ngModel" [(ngModel)]="peopleService.selectedPeople.lastname" placeholder="Enter you lastname">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="identificationCard" #irpf="ngModel" [(ngModel)]="peopleService.selectedPeople.identificationCard" placeholder="Enter you identificationCard">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="birthdate" #irpf="ngModel" [(ngModel)]="peopleService.selectedPeople.birthdate" placeholder="Enter you birthdate">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="registrationDate" #irpf="ngModel" [(ngModel)]="peopleService.selectedPeople.registrationDate" placeholder="Enter you registrationDate">
+              </div>
+              <div class="input-field col s12">
+                <select [(ngModel)]="typeUserService.selectedTypeUser.name" class='form-control' name="name">
+                  <option value="" disabled selected>Tipo de Usuario</option>
+                  <option *ngFor="let item of typeUserService.typeUser" [value]="item.name">{{item.name}}</option>
+                </select>   
+              <div class="card-action">
+                <div class="input-field col s12">
+                  <button class="btn right" style="margin-left: 2px">Save</button>
+                  <button class="btn right" (click)="resetForm(peopleForm)">Clean</button>
+                </div>
+              </div> 
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="col s7">
+      <table class="striped highlight black-text">
+        <thead>
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>Identification Card</th>
+          <th>Birthdate</th>
+          <th>Registration Date</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let people of peopleService.people">
+            <td>{{ people.name }}</td>
+            <td>{{ people.lastname }}</td>
+            <td>{{ people.identificationCard }}</td>
+            <td>{{ people.birthdate }}</td>
+            <td>{{ people.registrationDate }}</td>
+            <td>
+              <a (click)="editPeople(people)">
+                  <i class="material-icons" style="color:blue">edit</i>
+              </a>
+              <a (click)="deletePeople(people._id)">
+                  <i class="material-icons" style="color:blue">delete</i>
+              </a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
